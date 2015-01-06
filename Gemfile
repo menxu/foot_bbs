@@ -78,7 +78,7 @@ gem 'cancancan', '~> 1.8.4'
 #second_level_cache
 gem 'hiredis', '~> 0.4.5'
 # Redis 命名空间
-gem 'redis-namespace','~> 1.3.1''
+gem 'redis-namespace','~> 1.3.1'
 
 # 将一些数据存放入 Redis
 gem 'redis-objects', '0.9.1'
