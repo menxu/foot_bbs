@@ -102,6 +102,8 @@ gem 'faye-rails','1.0.0'
 gem 'social-share-button'
 
 #表单
+gem 'haml'
+gem 'cells', :git => 'git@github.com:apotonick/cells.git'
 gem 'simple_form', '3.1.0'
 
 #API
