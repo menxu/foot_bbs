@@ -1,0 +1,28 @@
+<% cache([topic, suggest]) do %>
+<div class="topic topic-line topic-<%= topic.id %>">
+  <div class="pull-left avatar">
+    <%= topic.user.name %>
+  </div>
+  <div class="right-info">
+    <div class="pull-right replies">
+      <%= link_to(32, "#{home_path}#reply#{topic.replies_count}", class: "count state-false") %>
+    </div>
+    <div class="infos">
+      <div class="title">
+        <%= link_to(truncate(topic.title, length: 100), home_path, title: topic.title) %>
+        <% if suggest %>
+          <i class="icon small_pin" title="置顶"></i>
+        <% end %>
+      </div>
+      <div class="info">
+        <% if action_name != "node" %>
+        •
+        <% end %>
+        <em>
+          •
+        </em>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

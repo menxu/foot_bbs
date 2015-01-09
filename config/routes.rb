@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
 
+  resources :topics do
+    collection do
+      get :excellent
+    end
+  end
 end
 
 
