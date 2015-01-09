@@ -1,14 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <title>FootBbs</title>
+  <title><%= render_page_title %></title>
+  <meta charset='utf-8' />
+  <% if mobile? %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+    <meta content='True' name='HandheldFriendly' />
+  <% else %>
+  <% end %>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-offset="50" data-controller-name="<%= controller_name %>">
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <h3>
+          <a href="/" class="site-logo"></a>
+        </h3>
+        <%= render_list class: "nav" do |li|
+           li << link_to(t("menu.home"), root_path)
+           li << link_to(t("menu.topics"), sites_path)
+           li << link_to(t("menu.wiki"), sites_path) if !mobile?
+           li << link_to(t("menu.jobs"), sites_path)
+           li << link_to(t("menu.tweets"), sites_path) if !mobile?
+           li << link_to(t("menu.sites"), sites_path) if !mobile?
+        end %>
+        <span class="pull-right">
+          <form action="/search" class="navbar-search" method="get">
+            <input type="text" name="q" class="search-query" value="<%= params[:q] %>" placeholder="<%= t("common.search") %>" />
+          </form>
 
-<%= yield %>
+          <%= render "common/user_nav" %>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id='main' class='container-fluid'>
+      <button class='btn btn-info'>默认样式的替代样式</button>
+      <button class='btn btn-success'>表示成功或积极的动作</button>
+      <div class='btn btn-danger'>表示这个动作危险或存在危险</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="main" class="container-fluid">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>

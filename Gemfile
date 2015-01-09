@@ -51,6 +51,7 @@ gem 'mini_magick','3.7.0', require: false
 
 #Mongoid 辅助插件
 gem 'mongoid', '4.0.0'
+gem "bson_ext"
 gem 'mongoid-rails'
 gem 'mongoid_auto_increment_id', '0.6.4'
 gem 'mongoid_rails_migrations', '1.0.0'
@@ -64,8 +65,10 @@ gem 'will_paginate', '3.0.7'
 
 # Bootstrap
 gem 'bootstrap-sass'
+# gem 'autoprefixer-rails'
 gem 'sass-rails', '>= 3.2'
-gem 'autoprefixer-rails'
+# gem 'bootstrap-will_paginate', '0.0.3'
+gem 'bootstrap_helper', '4.2.3'
 
 # 三方平台 OAuth 验证登陆
 gem 'omniauth', '~> 1.0.1'
@@ -102,7 +105,8 @@ gem 'faye-rails','1.0.0'
 gem 'social-share-button'
 
 #表单
-gem 'haml'
+# gem 'haml'
+# gem 'haml-rails'
 gem 'cells', :git => 'git@github.com:apotonick/cells.git'
 gem 'simple_form', '3.1.0'
 
